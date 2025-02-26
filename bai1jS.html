@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function flag() { // cờ
+                // answer: câu trả lời
+            let answer = confirm("Would you like to play a game of chess?");
+            // bạn có muốn chơi 1 ván cờ không?
+
+            let result;
+
+            if (answer) {
+                result = "Excellent. We'll play a nice game of chess.";
+                // xuất xắc. chúng ta sẽ chơi 1 ván cờ hay
+            } else {
+                result = "Maybe later then.";
+                // có lẽ để sau
+            }
+
+            // trả về kết quả
+            return result;
+        }
+
+        console.log(flag());
+    </script>
+</body>
+
+</html>
