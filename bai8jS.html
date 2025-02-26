@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function capitalizeWords(str) {
+            return str
+                .toLowerCase() // chuyển chuỗi thành chữ thường
+                .split(' ') // chia chuỗi thành 1 mảng các từ dùng dấu cách làm điểm phân tách
+                // map() duyệt qua từng phần tử của mảng
+                // word.charAt(0).toUpperCase() lấy ký tự đầu tiên của từ chuyển thành chữ in hoa
+                // word.slice(1) lấy phần từ còn lại của từ (từ ký tự 2)
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' '); // ghép các phần tử trong mảng thành chuỗi
+        }
+
+        console.log(capitalizeWords("hello WORLD")); // "Hello World"
+        console.log(capitalizeWords("rIKKei acaDEMy")); // "Rikkei Academy"
+
+        // gợi ý thể thêm prompt và alert để tương tác với người dùng
+        const userInput = prompt("Nhập vào một chuỗi để chuyển đổi ký tự đầu thành chữ in hoa:");
+        if (userInput !== null && userInput.trim() !== "") {
+            alert(capitalizeWords(userInput));
+        } else {
+            alert("Vui lòng nhập một chuỗi hợp lệ!");
+        }
+    </script>
+</body>
+
+</html>
