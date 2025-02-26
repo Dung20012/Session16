@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function character(str) { // ký tự
+
+            // đảo ngược chuỗi và so sánh với chuỗi ban đầu
+            // str.split('') chia chuỗi thành 1 mảng các ký tự
+            // .reverse() đảo ngược mảng ký tự
+            // .join('') ghép phần tử của mảng thành chuỗi mới
+            let reversedStr = str.split('').reverse().join('');
+
+            // nếu 2 chuỗi giống nhau trả về true k thì false 
+            return str === reversedStr;
+        }
+
+        // nhập vào 1 chuỗi
+        let userInput = prompt("Nhập vào một chuỗi để kiểm tra đối xứng:");
+
+        // ktra hiển thị kq
+        // userInput !== k cho ng dùng bấm "cancel" trên hộp thoại prompt
+        // userInout.trim() !== "" dùng trim() để loại bỏ để loại bỏ khoảng trắng đầu
+        // và cuối chuỗi
+        if (userInput !== null && userInput.trim() !== "") {
+            let result = character(userInput) ? "là chuỗi đối xứng" : "không phải là chuỗi đối xứng";
+            alert("Chuỗi bạn nhập " + result);
+        } else {
+            alert("Vui lòng nhập một chuỗi hợp lệ!");
+        }
+    </script>
+</body>
+
+</html>
