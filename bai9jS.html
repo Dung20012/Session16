@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function sumPrimes(arr) {
+            return arr.filter(isPrime).reduce((sum, current) => sum + current, 0);
+        }
+
+        
+        console.log(sumPrimes([1, 2, 3, 4, 5, 6, 7])); // 17
+        console.log(sumPrimes([10, 11, 12, 13, 14])); // 24
+
+        
+        const userInput = prompt("Nhập vào các số, cách nhau bằng dấu phẩy:");
+        if (userInput !== null && userInput.trim() !== "") {
+            const numArray = userInput.split(',').map(Number);
+            const result = sumPrimes(numArray);
+            alert("Tổng các số nguyên tố trong mảng là: " + result);
+        } else {
+            alert("Vui lòng nhập một mảng số hợp lệ!");
+        }
+    </script>
+</body>
+
+</html>
